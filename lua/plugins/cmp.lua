@@ -136,6 +136,6 @@ tabnine:setup({
   sort                     = true;
   show_prediction_strength = true;
   run_on_every_keystroke   = true;
-  snipper_placeholder      = '..';
+  snippet_placeholder      = '..';
   ignored_file_types       = {};
 })

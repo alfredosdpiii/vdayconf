@@ -187,6 +187,10 @@ end}
   use "lukas-reineke/cmp-rg"
   --formatters null ls
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  --find and replace
+    use {'ray-x/sad.nvim', config = "require('plugins.sad')"}
+    use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
+
 end
 
 local plugins = setmetatable({}, {
