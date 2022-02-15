@@ -112,6 +112,7 @@ cmp.setup {
     { name = 'luasnip'                         },
     { name = 'calc'                            },
     { name = 'nvim_lua'                        },
+{ name = 'rg'}
   },
 
   confirm_opts = {

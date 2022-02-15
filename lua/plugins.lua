@@ -156,13 +156,14 @@ local function init()
     use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
 
     --harpoon
-  use "ThePrimeagen/harpoon"
+    use "ThePrimeagen/harpoon"
 
   --cheat
     use 'dbeniamine/cheat.sh-vim'
 
     --formatter
     use {'prettier/vim-prettier', run = 'yarn install' }
+    use 'sbdchd/neoformat'
 
     --git PR
 use {'pwntester/octo.nvim', config=function()
@@ -179,11 +180,13 @@ end}
 
   --ruby
   use 'tpope/vim-bundler'
-  use 'tpope/vim-rvm'
-  --neoscroll
-  use 'karb94/neoscroll.nvim'
+  -- --neoscroll
+  -- use {'karb94/neoscroll.nvim', config=function() require("neoscroll").setup() end}
   --gruvbox
   use "luisiacc/gruvbox-baby"
+  use "lukas-reineke/cmp-rg"
+  --formatters null ls
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 end
 
 local plugins = setmetatable({}, {

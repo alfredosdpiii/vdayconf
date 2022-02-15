@@ -31,8 +31,8 @@ keymap("n", "<C-s>", ":w<CR>", { noremap = true, silent = true })
 keymap("i", "<C-s>", "<ESC> :w<CR>", { noremap = true, silent = true })
 
 -- Make word uppercase
-keymap("n", "<C-u>", "viwU<ESC>", { noremap = true })
-keymap("i", "<C-u>", "<ESC>viwUi", { noremap = true })
+-- keymap("n", "<C-u>", "viwU<ESC>", { noremap = true })
+-- keymap("i", "<C-u>", "<ESC>viwUi", { noremap = true })
 
 -- Telescope
 keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>", { noremap = true })
