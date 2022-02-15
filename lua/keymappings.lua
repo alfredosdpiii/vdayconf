@@ -129,7 +129,7 @@ keymap("n", "<leader>cr", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true,
 keymap("n", "<leader>cf", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
 keymap("v", "<leader>cf", "<cmd>'<.'>lua vim.lsp.buf.range_formatting()<CR>", { noremap = true, silent = true })
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
-keymap("n", "L", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
+-- keymap("n", "L", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
 keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
 keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>", { noremap = true, silent = true })
 
@@ -171,3 +171,11 @@ keymap("n", "<C-o>", ':lua require("harpoon.ui").toggle_quick_menu()<CR>', opts)
 keymap("n", "<F5>", ":UndoTreeToggle<CR>", opts)
 --fix
 keymap("i", "<C-c>", "<Esc>", opts)
+-- Resize with arrows
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+--refresh conf
+keymap("n", "<leader><CR>", ":so ~/.config/nvim/init.lua", opts)

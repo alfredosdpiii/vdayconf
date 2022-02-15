@@ -180,6 +180,10 @@ end}
   --ruby
   use 'tpope/vim-bundler'
   use 'tpope/vim-rvm'
+  --neoscroll
+  use 'karb94/neoscroll.nvim'
+  --gruvbox
+  use "luisiacc/gruvbox-baby"
 end
 
 local plugins = setmetatable({}, {
