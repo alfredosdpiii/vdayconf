@@ -74,6 +74,10 @@ local function init()
   use {'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp', after = 'cmp-calc'}
   use {'David-Kunz/cmp-npm', after = 'cmp-tabnine', requires = 'nvim-lua/plenary.nvim', config = "require('plugins.cmp-npm')"}
   use {'saadparwaiz1/cmp_luasnip', after = 'cmp-npm'}
+  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use 'kristijanhusak/vim-dadbod-completion'
+  use 'ray-x/cmp-treesitter'
+  use 'hrsh7th/cmp-emoji'
 
   -- LSP Addons
   use {'williamboman/nvim-lsp-installer', event = 'BufEnter', after = 'cmp-nvim-lsp', config = "require('lsp.installer')"}
@@ -191,6 +195,9 @@ end}
     use {'ray-x/sad.nvim', config = "require('plugins.sad')"}
     use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 
+  use 'SirVer/ultisnips'
+  use 'mlaursen/vim-react-snippets'
+  use {'quangnguyen30192/cmp-nvim-ultisnips', config = "require('plugins.ultisnips')"}
 end
 
 local plugins = setmetatable({}, {

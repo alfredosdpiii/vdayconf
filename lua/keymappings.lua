@@ -35,8 +35,8 @@ keymap("i", "<C-s>", "<ESC> :w<CR>", { noremap = true, silent = true })
 -- keymap("i", "<C-u>", "<ESC>viwUi", { noremap = true })
 
 -- Telescope
-keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>", { noremap = true })
-keymap("n", "<S-p>", "<CMD>Telescope live_grep<CR>", { noremap = true })
+-- keymap("n", "<C-p>", "<CMD>lua require('plugins.telescope').project_files()<CR>", { noremap = true })
+-- keymap("n", "<S-p>", "<CMD>Telescope live_grep<CR>", { noremap = true })
 
 -- Remove highlights
 keymap("n", "<CR>", ":noh<CR><CR>", { noremap = true, silent = true })
@@ -106,7 +106,7 @@ keymap("n", "ga", "<Plug>(EasyAlign)", { silent = true })
 keymap("x", "ga", "<Plug>(EasyAlign)", { silent = true })
 
 -- Manually invoke speeddating in case switch.vim didn't work
-keymap("n", "<C-a>", ":if !switch#Switch() <bar> call speeddating#increment(v:count1) <bar> endif<CR>", { noremap = true, silent = true })
+keymap("n", "<C-a>", ":if !switch#Switch() <bar> call speeddating#increment(v:count3) <bar> endif<CR>", { noremap = true, silent = true })
 keymap("n", "<C-x>", ":if !switch#Switch({'reverse': 1}) <bar> call speeddating#increment(-v:count1) <bar> endif<CR>", { noremap = true, silent = true })
 
 -- Space to NOP to prevent Leader issues

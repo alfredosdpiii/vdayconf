@@ -13,7 +13,7 @@ if not snip_status_ok then
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
-
+require('luasnip').filetype_extend("javascript", { "javascriptreact" })
 -- Utils
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -32,6 +32,8 @@ local source_mapping = {
   path        = EcoVim.icons.folderOpen2,
   treesitter  = EcoVim.icons.tree,
   zsh         = EcoVim.icons.terminal .. '[ZSH]',
+  ultisnips         = EcoVim.icons.snippet,
+  emoji = ':)',
 }
 
 cmp.setup {
@@ -104,6 +106,8 @@ cmp.setup {
 
   -- You should specify your *installed* sources.
   sources = {
+ { name = "ultisnips" },
+     { name = 'emoji' },
     { name = 'nvim_lsp'                        },
     { name = 'npm'                             },
     { name = 'cmp_tabnine', max_item_count = 3 },
@@ -112,7 +116,9 @@ cmp.setup {
     { name = 'luasnip'                         },
     { name = 'calc'                            },
     { name = 'nvim_lua'                        },
-{ name = 'rg'}
+  { name = 'rg'},
+  { name = 'vim-dadbod-completion' },
+{ name = 'treesitter' },
   },
 
   confirm_opts = {
@@ -138,4 +144,16 @@ tabnine:setup({
   run_on_every_keystroke   = true;
   snippet_placeholder      = '..';
   ignored_file_types       = {};
+})
+cmp.setup.cmdline('/', {
+    sources = {
+        { name = 'buffer'}
+    }
+})
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+        {name='path'}
+    }, {
+            {name='cmdline'}
+        })
 })
