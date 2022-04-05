@@ -9,7 +9,7 @@
 local icons = require('icons')
 
 EcoVim = {
-  colorscheme = 'nightfly', -- nightfly/tokyonight
+  colorscheme = 'gruvbox-baby', -- nightfly/tokyonight
   ui = {
     float = {
       border = 'rounded',
