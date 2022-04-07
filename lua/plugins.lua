@@ -21,9 +21,13 @@ local function init()
       packer.init({
           -- we don't want the compilation file in '~/.config/nvim'
           disable_commands = true,
-          compile_path = compile_path
+          compile_path = compile_path,
+      config = {
+          max_jobs = 100,
+        }
       })
   end
+
 
   local use = packer.use
   packer.reset()
@@ -67,8 +71,8 @@ local function init()
   -- LSP Cmp
   use {'hrsh7th/nvim-cmp', event = 'InsertEnter', config = "require('plugins.cmp')"}
   use {'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp'}
-  use {'hrsh7th/cmp-nvim-lsp', after = 'cmp-nvim-lua'}
-  use {'hrsh7th/cmp-buffer', after = 'cmp-nvim-lsp'}
+  use {'hrsh7th/cmp-nvim-lsp'}
+  use {'hrsh7th/cmp-buffer', after = 'cmp-nvim-lua'}
   use {'hrsh7th/cmp-path', after = 'cmp-buffer'}
   use {'hrsh7th/cmp-calc', after = 'cmp-path'}
   use {'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp', after = 'cmp-calc'}
