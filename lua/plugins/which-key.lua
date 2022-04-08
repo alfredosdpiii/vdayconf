@@ -382,6 +382,10 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+  E = {
+    name = "Change colorscheme",
+    c = { "<cmd>lua require'telescope.builtin'.colorscheme{}<cr>", "Color Scheme"},
+  }
 }
 
 local wk = require "which-key"

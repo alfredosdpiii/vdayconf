@@ -136,7 +136,7 @@ keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev({ float = { border = 'round
 
 --my keymaps
 --telescope stuff
-keymap("n", "<leader>cs", ":lua require'telescope.builtin'.colorscheme{}<CR>", opts)
+-- keymap("n", "<leader>cs", ":lua require'telescope.builtin'.colorscheme{}<CR>", opts)
 --find buffer
 keymap("n", ";", ":lua require'telescope.builtin'.buffers{}<CR>", opts)
 --find in current buffer

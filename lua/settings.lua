@@ -55,10 +55,11 @@ vim.opt.formatoptions:remove('c');
 vim.opt.formatoptions:remove('r');
 vim.opt.formatoptions:remove('o');
 vim.api.nvim_exec([[
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
+" augroup fmt
+"   autocmd!
+"   autocmd BufWritePre * undojoin | Neoformat
+" augroup END
+au BufWritePre * try | undojoin | Neoformat | catch /E790/ | Neoformat | endtry
 ]], true)
 
 for k, v in pairs(options) do

@@ -170,9 +170,9 @@ local function init()
     use 'sbdchd/neoformat'
 
     --git PR
-use {'pwntester/octo.nvim', config=function()
-  require"octo".setup()
-end}
+    use {'pwntester/octo.nvim', config=function()
+      require"octo".setup()
+    end}
 --no distractions mode
   use "junegunn/goyo.vim"
 
@@ -192,12 +192,17 @@ end}
   --formatters null ls
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   --find and replace
-    use {'ray-x/sad.nvim', config = "require('plugins.sad')"}
-    use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
+  use {'ray-x/sad.nvim', config = "require('plugins.sad')"}
+  use {'ray-x/navigator.lua', requires = {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}}
 
   use 'SirVer/ultisnips'
   use 'mlaursen/vim-react-snippets'
   use {'quangnguyen30192/cmp-nvim-ultisnips', config = "require('plugins.ultisnips')"}
+  use {'rktjmp/lush.nvim'}
+  use {'JLighter/aura.nvim'}
+  use {'gilgigilgil/anderson.vim'}
+  use {'drewtempelmeyer/palenight.vim'}
+  use {'kristijanhusak/vim-dadbod-ui'}
 end
 
 local plugins = setmetatable({}, {
