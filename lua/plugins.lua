@@ -155,6 +155,7 @@ local function init()
     use "tpope/vim-dadbod"
     use "tpope/vim-jdaddy"
     use "tpope/vim-rake"
+    use "tpope/vim-bundler"
 
     --test suite
     use "vim-test/vim-test"
