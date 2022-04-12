@@ -35,6 +35,9 @@ end
 -- Check installed servers by :LspInstallInfo
 
 require('lsp.servers.bash')
+require('lsp.servers.solargraph')
+require('lsp.servers.sqls')
+-- require('lsp.servers.sqlls')
 require('lsp.servers.css')
 require('lsp.servers.eslint')
 require('lsp.servers.graphql')

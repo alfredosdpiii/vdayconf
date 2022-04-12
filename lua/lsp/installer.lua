@@ -27,6 +27,10 @@ lsp_installer.on_server_ready(function(server)
       opts.settings = require('lsp.servers.bash').settings
     end
 
+    if server.name == "solargraph" then
+      opts.settings = require('lsp.servers.solargraph').settings
+    end
+
     if server.name == "cssls" then
       opts.settings = require('lsp.servers.css').settings
     end

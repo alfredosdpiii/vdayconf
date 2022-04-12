@@ -21,7 +21,10 @@ local function init()
       packer.init({
           -- we don't want the compilation file in '~/.config/nvim'
           disable_commands = true,
-          compile_path = compile_path
+          compile_path = compile_path,
+      config = {
+        max_jobs = 100,
+      }
       })
   end
 
@@ -65,13 +68,13 @@ local function init()
   use {'neovim/nvim-lspconfig'}
 
   -- LSP Cmp
-  use {'hrsh7th/nvim-cmp', event = 'InsertEnter', config = "require('plugins.cmp')"}
+  use {'hrsh7th/nvim-cmp', module = 'cmp', event = 'InsertEnter', config = "require('plugins.cmp')"}
   use {'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp'}
   use {'hrsh7th/cmp-nvim-lsp', after = 'cmp-nvim-lua'}
   use {'hrsh7th/cmp-buffer', after = 'cmp-nvim-lsp'}
   use {'hrsh7th/cmp-path', after = 'cmp-buffer'}
   use {'hrsh7th/cmp-calc', after = 'cmp-path'}
-  use {'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp', after = 'cmp-calc'}
+  use {'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp', after = 'cmp-calc', config = "require('plugins.tabnine')"}
   use {'David-Kunz/cmp-npm', after = 'cmp-tabnine', requires = 'nvim-lua/plenary.nvim', config = "require('plugins.cmp-npm')"}
   use {'saadparwaiz1/cmp_luasnip', after = 'cmp-npm'}
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -80,7 +83,7 @@ local function init()
   use 'hrsh7th/cmp-emoji'
 
   -- LSP Addons
-  use {'williamboman/nvim-lsp-installer', event = 'BufEnter', after = 'cmp-nvim-lsp', config = "require('lsp.installer')"}
+  use {'williamboman/nvim-lsp-installer', module = 'nvim-lsp-installer', event = 'BufEnter', after = 'cmp-nvim-lsp', config = "require('lsp.installer')"}
   use {'stevearc/dressing.nvim', requires = 'MunifTanjim/nui.nvim', config = "require('plugins.dressing')"}
   use {'onsails/lspkind-nvim'}
   use {'folke/lsp-trouble.nvim', config = "require('plugins.trouble')"}
@@ -185,7 +188,6 @@ local function init()
   use "tpope/vim-fugitive"
 
   --ruby
-  use 'tpope/vim-bundler'
   -- --neoscroll
   -- use {'karb94/neoscroll.nvim', config=function() require("neoscroll").setup() end}
   --gruvbox
@@ -205,6 +207,13 @@ local function init()
   use {'gilgigilgil/anderson.vim'}
   use {'drewtempelmeyer/palenight.vim'}
   use {'kristijanhusak/vim-dadbod-ui'}
+--   use {'nanotee/sqls.nvim', config=function()
+--     require('lspconfig').sqls.setup{
+--     on_attach = function(client, bufnr)
+--         require('sqls').on_attach(client, bufnr)
+--     end
+-- }end}
+  use 'nanotee/sqls.nvim'
 end
 
 local plugins = setmetatable({}, {

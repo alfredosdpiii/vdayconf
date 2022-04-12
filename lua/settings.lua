@@ -30,6 +30,7 @@ local options = {
   viminfo        = "'1000",                 --- Increase the size of file history
   wildignore     = "*node_modules/**",      --- Don't search inside Node.js modules (works for gutentag)
   wrap           = true,                   --- Display long lines as just one line
+  linebreak      = true,
   writebackup    = false,                   --- Not needed
   -- Neovim defaults
   autoindent     = true,                    --- Good auto indent
@@ -55,10 +56,6 @@ vim.opt.formatoptions:remove('c');
 vim.opt.formatoptions:remove('r');
 vim.opt.formatoptions:remove('o');
 vim.api.nvim_exec([[
-" augroup fmt
-"   autocmd!
-"   autocmd BufWritePre * undojoin | Neoformat
-" augroup END
 au BufWritePre * try | undojoin | Neoformat | catch /E790/ | Neoformat | endtry
 ]], true)
 
