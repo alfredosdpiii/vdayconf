@@ -214,6 +214,7 @@ local function init()
 --     end
 -- }end}
   use 'nanotee/sqls.nvim'
+  use 'kdheepak/lazygit.nvim'
 end
 
 local plugins = setmetatable({}, {
