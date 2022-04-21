@@ -385,6 +385,10 @@ local mappings = {
   E = {
     name = "Change colorscheme",
     c = { "<cmd>lua require'telescope.builtin'.colorscheme{}<cr>", "Color Scheme"},
+  },
+  N = {
+    name = "Neoformat",
+    f = {"<cmd>Neoformat<cr>", "format"}
   }
 }
 

@@ -126,9 +126,9 @@ cmp.setup {
     select = false,
   },
 
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  },
+  -- documentation = {
+  --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  -- },
 
   experimental = {
     native_menu = false,

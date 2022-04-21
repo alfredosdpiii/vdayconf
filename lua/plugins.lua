@@ -168,7 +168,9 @@ local function init()
     use "ThePrimeagen/harpoon"
 
   --cheat
-    use 'dbeniamine/cheat.sh-vim'
+    -- use 'dbeniamine/cheat.sh-vim'
+    use 'RishabhRD/popfix'
+    use 'RishabhRD/nvim-cheat.sh'
 
     --formatter
     use {'prettier/vim-prettier', run = 'yarn install' }
