@@ -51,12 +51,29 @@ require('telescope').setup {
             override_generic_sorter = false,
             override_file_sorter = true,
             case_mode = "smart_case",
-        }
+        },
+        gitmoji = {
+            action = function(entry)
+                -- entry = {
+                --     display = "🎨 Improve structure / format of the code.",
+                --     index = 1,
+                --     ordinal = "Improve structure / format of the code.",
+                --     value = "🎨"
+                -- }
+                vim.ui.input({ prompt = "Enter commit msg: " .. entry.value .. " "}, function(msg)
+                    if not msg then
+                        return
+                    end
+                    vim.cmd(':G commit -m "' .. entry.value .. ' ' .. msg .. '"')
+                end)
+            end,
+        },
     }
 }
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('repo')
+require('telescope').load_extension("gitmoji")
 
 
 -- Implement delta as previewer for diffs

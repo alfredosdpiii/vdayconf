@@ -95,7 +95,7 @@ local function init()
   use {'AndrewRadev/switch.vim'}
   use {'AndrewRadev/splitjoin.vim'}
   use {'numToStr/Comment.nvim', config = "require('plugins.comment')"}
-  use {'akinsho/nvim-toggleterm.lua', config = "require('plugins.toggleterm')"}
+  use {'akinsho/nvim-toggleterm.lua', branch = 'main', config = "require('plugins.toggleterm')"}
   use {'tpope/vim-repeat'}
   use {'tpope/vim-speeddating'}
   use {'tpope/vim-surround'}
@@ -138,7 +138,7 @@ local function init()
   -- Debug
   -- TODO: Configure dap
   -- use {'rcarriga/nvim-dap-ui', requires = {"mfussenegger/nvim-dap"}}
-  -- use {'mfussenegger/nvim-dap', config = "require('plugins.dap')"}
+--  use {'mfussenegger/nvim-dap', config = "require('plugins.dap')"}
 
   -- Git
   use {'lewis6991/gitsigns.nvim',
@@ -217,6 +217,14 @@ local function init()
 -- }end}
   use 'nanotee/sqls.nvim'
   use 'kdheepak/lazygit.nvim'
+  use {'folke/trouble.nvim', config = "require('plugins.trouble')"}
+  use 'sunaku/vim-dasht'
+--  use { "rcarriga/nvim-dap-ui", config = "requires('plugins.dapui')", requires = {"mfussenegger/nvim-dap"} }
+  use {'windwp/nvim-ts-autotag', config=function() require('nvim-ts-autotag').setup()
+   end }
+   -- use 'thoughtbot/vim-rspec'
+   use 'skwp/vim-rspec'
+   use 'olacin/telescope-gitmoji.nvim'
 end
 
 local plugins = setmetatable({}, {

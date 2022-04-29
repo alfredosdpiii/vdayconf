@@ -389,6 +389,11 @@ local mappings = {
   N = {
     name = "Neoformat",
     f = {"<cmd>Neoformat<cr>", "format"}
+  },
+  R = {
+    name = "RSPEC",
+    -- t = {"<cmd>:call RunCurrentSpecFile()<cr>","Test File"}
+    t = {"<cmd>RunSpec<cr>","Test File"}
   }
 }
 
